@@ -11,4 +11,23 @@ public class PilhaArray implements Pilha {
 	public boolean isEmpty() {
 		return t == -1;
 	}
+	
+	public int size() {
+		return t+1;
+	}
+	
+	public Object top() throws PilhaVazia{
+		if (isEmpty())
+			throw new PilhaVazia();
+		else
+			return arrayPilha[t];
+		
+	}
+	
+	public Object pop() throws PilhaVazia{
+		if (isEmpty())
+			throw new PilhaVazia();
+		else
+			return arrayPilha[t--];
+	}
 }
