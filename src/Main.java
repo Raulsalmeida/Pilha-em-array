@@ -12,13 +12,15 @@ public class Main {
                 + "3 - Ver ultimo elemento\n"
                 + "4 - Ver número de elementos na pilha\n"
                 + "5 - Ver se a pilha está vazia\n"
-                + "0 - SAIR");
+                + "0 - SAIR\n\n>>> ");
+        
     }
 
-    public static void main(String args[]) throws PilhaVazia {
-        int tam=5;
+    public static void main(String args[]) throws PilhaVazia{
+        int tam=1;
         Object elemento;
-        PilhaArray minhaPilha = new PilhaArray(tam);
+        PilhaArray minhaPilha = new PilhaArray();
+        minhaPilha.construct(tam);
         int resposta=-1;
         while (resposta!=0) {
             menuUI();

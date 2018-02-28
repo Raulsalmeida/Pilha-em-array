@@ -3,16 +3,20 @@ public class PilhaArray implements Pilha {
 	
 	private Object arrayPilha[];
 	private int t = -1;
-	
         
         //CONSTRUTOR DO OBJETO
-	public PilhaArray (int tam) {
+	public Object construct (int tam) {
 		arrayPilha = new Object[tam];
+            return arrayPilha;
 	}
-	
+        
         //ADCIONA ELEMENTO NO ARRAY
-        public void push(Object o){
-            
+        public void push(Object o) throws PilhaVazia{
+            if (isEmpty())
+                throw new PilhaVazia();
+            else
+                arrayPilha[t+1] = o;
+             
         };
         
          //MOSTRA O ULTIMO ELEMENTO INSERIDO, SEM REMOVER
