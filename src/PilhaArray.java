@@ -1,34 +1,49 @@
-
 public class PilhaArray implements Pilha {
-	
 	private Object arrayPilha[];
 	private int t = -1;
+	private int fc;
         
         //CONSTRUTOR DO OBJETO
-	public Object construct (int tam) {
+	public PilhaArray (int tam, int fc) {
 		arrayPilha = new Object[tam];
-            return arrayPilha;
+        this.fc = fc;
 	}
-        
+		//METODO DE CRESCIMENTO
+	public Object[] crescimento(int fc) {
+		Object gotenks[];
+		if(fc == 0) {
+			gotenks = new Object[size()*2];
+			for(int i = 0; i < size(); i++) {
+				gotenks[i] = arrayPilha[i];
+				return gotenks;
+			}
+		}else {
+			gotenks = new Object[size()+fc];
+			for(int i = 0; i < size(); i++) {
+				gotenks[i] = arrayPilha[i];
+				return gotenks;
+			}
+		}
+		return gotenks;		
+	}
+	
         //ADCIONA ELEMENTO NO ARRAY
-        public void push(Object o) throws PilhaVazia{
-            if (isEmpty())
-                throw new PilhaVazia();
-            else
-                arrayPilha[t+1] = o;
-             
-        };
+    public void push(Object o) {
+        if (t == arrayPilha.length - 1) {
+        	arrayPilha = crescimento(fc);
+        	arrayPilha[++t] = o;
+        }
+    }
         
          //MOSTRA O ULTIMO ELEMENTO INSERIDO, SEM REMOVER
 	public Object top() throws PilhaVazia{
 		if (isEmpty())
 			throw new PilhaVazia();
 		else
-			return arrayPilha[t];
-		
+			return arrayPilha[t];	
 	}
 	
-        //RETORNA SE ESTÁ VAZIO OU NÃO
+        //RETORNA SE ESTÃ� VAZIO OU NÃƒO
 	public boolean isEmpty() {
 		return t == -1;
 	}

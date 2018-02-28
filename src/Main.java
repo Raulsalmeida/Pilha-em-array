@@ -17,11 +17,16 @@ public class Main {
     }
 
     public static void main(String args[]) throws PilhaVazia{
-        int tam=1;
+    	
+    	Scanner sc = new Scanner(System.in);
+    	int tam;
+        int fc;
         Object elemento;
-        PilhaArray minhaPilha = new PilhaArray();
-        minhaPilha.construct(tam);
-        int resposta=-1;
+        tam = sc.nextInt();
+        fc = sc.nextInt();
+        PilhaArray minhaPilha = new PilhaArray(tam, fc);
+        
+        int resposta = -1;
         while (resposta!=0) {
             menuUI();
             Scanner zoy = new Scanner (System.in);
