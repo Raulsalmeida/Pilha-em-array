@@ -6,12 +6,12 @@ public class Main {
 
     public static void menuUI(){
         System.out.println("PILHA DE ARRAY\n====================="
-                + "\nEscolha uma opÃ§Ã£o:\n----------------------\n"
+                + "\nEscolha uma opção:\n----------------------\n"
                 + "1 - Adicionar elemento\n"
                 + "2 - Remover ultimo elemento\n"
                 + "3 - Ver ultimo elemento\n"
-                + "4 - Ver nÃºmero de elementos na pilha\n"
-                + "5 - Ver se a pilha estÃ¡ vazia\n"
+                + "4 - Ver número de elementos na pilha\n"
+                + "5 - Ver se a pilha está vazia\n"
                 + "0 - SAIR\n\n>>> ");
         
     }
@@ -41,20 +41,28 @@ public class Main {
                     break;
                 
                 case 2:
+                	try {
                     minhaPilha.pop();
                     System.out.println("Elemento Removido com sucesso!!");
                     Object topo = minhaPilha.top();
-                    System.out.println("\n--->Seu elemento do topo agora Ã© "+topo+"!<---");
+                    System.out.println("\n--->Seu elemento do topo agora é "+topo+"!<---");
+                	}catch(PilhaVazia e1){
+                		System.out.println("Sua pilha está vazia, não tem o que remover");
+                	}
                     break;
                 
                 case 3:
+                	try {
                     Object topo2 = minhaPilha.top();
-                    System.out.println("\n--->Seu elemento do topo Ã© "+topo2+"!<---");
+                    System.out.println("\n--->Seu elemento do topo é "+topo2+"!<---");
+                	}catch(PilhaVazia e1){
+                		System.out.println("Sua pilha está vazia, não tem o que ver no topo dela");
+                	}
                     break;
                 
                 case 4:
                     int qtdElementos = minhaPilha.size();
-                    System.out.println("VocÃª tem "+qtdElementos+" na pilha!");
+                    System.out.println("Você tem "+qtdElementos+" na pilha!");
                     break;
                 
                 case 5:
@@ -63,7 +71,7 @@ public class Main {
                     if (situacao==true){
                         System.out.println("Sim! Pilha Vazia!");
                     }else{
-                        System.out.println("NÃ£o! a pilha nÃ£o estÃ¡ vazia. ContÃ©m "+ qtd +" elementos!");
+                        System.out.println("Não! a pilha não está vazia. Contém "+ qtd +" elementos!");
                     }
                     break;
                 
@@ -71,7 +79,7 @@ public class Main {
                     System.out.println("FIM DA PILHA\n=======================================");
                     break;
                 default:
-                    System.out.println("Escolha uma opÃ§Ã£o vÃ¡lida!");
+                    System.out.println("Escolha uma opção válida!");
             }
             
         }
