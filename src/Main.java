@@ -22,7 +22,9 @@ public class Main {
     	int tam;
         int fc;
         Object elemento;
+        System.out.println("Digite o tamanho da pilha");
         tam = sc.nextInt();
+        System.out.println("Digite o fator de crescimento da pilha");
         fc = sc.nextInt();
         PilhaArray minhaPilha = new PilhaArray(tam, fc);
         
@@ -36,20 +38,24 @@ public class Main {
                     System.out.print("ADICIONAR: ");
                     elemento = zoy.next();
                     minhaPilha.push(elemento);
+                    break;
                 
                 case 2:
                     minhaPilha.pop();
                     System.out.println("Elemento Removido com sucesso!!");
                     Object topo = minhaPilha.top();
                     System.out.println("\n--->Seu elemento do topo agora é "+topo+"!<---");
+                    break;
                 
                 case 3:
                     Object topo2 = minhaPilha.top();
                     System.out.println("\n--->Seu elemento do topo é "+topo2+"!<---");
+                    break;
                 
                 case 4:
                     int qtdElementos = minhaPilha.size();
                     System.out.println("Você tem "+qtdElementos+" na pilha!");
+                    break;
                 
                 case 5:
                     boolean situacao = minhaPilha.isEmpty();
@@ -59,10 +65,11 @@ public class Main {
                     }else{
                         System.out.println("Não! a pilha não está vazia. Contém "+ qtd +" elementos!");
                     }
+                    break;
                 
                 case 0:
                     System.out.println("FIM DA PILHA\n=======================================");
-                
+                    break;
                 default:
                     System.out.println("Escolha uma opção válida!");
             }

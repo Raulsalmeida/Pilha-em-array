@@ -11,17 +11,15 @@ public class PilhaArray implements Pilha {
 		//METODO DE CRESCIMENTO
 	public Object[] crescimento(int fc) {
 		Object gotenks[];
-		if(fc == 0) {
+		if(fc <= 0) {
 			gotenks = new Object[size()*2];
 			for(int i = 0; i < size(); i++) {
 				gotenks[i] = arrayPilha[i];
-				return gotenks;
 			}
 		}else {
 			gotenks = new Object[size()+fc];
 			for(int i = 0; i < size(); i++) {
 				gotenks[i] = arrayPilha[i];
-				return gotenks;
 			}
 		}
 		return gotenks;		
@@ -31,8 +29,8 @@ public class PilhaArray implements Pilha {
     public void push(Object o) {
         if (t == arrayPilha.length - 1) {
         	arrayPilha = crescimento(fc);
-        	arrayPilha[++t] = o;
         }
+        arrayPilha[++t] = o;
     }
         
          //MOSTRA O ULTIMO ELEMENTO INSERIDO, SEM REMOVER
