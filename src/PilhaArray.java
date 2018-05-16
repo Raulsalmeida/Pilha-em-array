@@ -60,5 +60,10 @@ public class PilhaArray implements Pilha {
 			return arrayPilha[t--];
 	}
         
+        public void mostrarPilha(){
+            for(int i=size()-1; i>=0; i--){
+                System.out.println("[========"+arrayPilha[i]+"=========]");
+            }
+        }
 
 }

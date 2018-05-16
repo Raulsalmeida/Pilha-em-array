@@ -6,12 +6,13 @@ public class Main {
 
     public static void menuUI(){
         System.out.println("PILHA DE ARRAY\n====================="
-                + "\nEscolha uma opção:\n----------------------\n"
+                + "\nEscolha uma opï¿½ï¿½o:\n----------------------\n"
                 + "1 - Adicionar elemento\n"
                 + "2 - Remover ultimo elemento\n"
                 + "3 - Ver ultimo elemento\n"
-                + "4 - Ver número de elementos na pilha\n"
-                + "5 - Ver se a pilha está vazia\n"
+                + "4 - Ver nï¿½mero de elementos na pilha\n"
+                + "5 - Ver se a pilha estï¿½ vazia\n"
+                + "6 - Ver pilha completa\n"
                 + "0 - SAIR\n\n>>> ");
         
     }
@@ -38,6 +39,7 @@ public class Main {
                     System.out.print("ADICIONAR: ");
                     elemento = zoy.next();
                     minhaPilha.push(elemento);
+                    minhaPilha.mostrarPilha();
                     break;
                 
                 case 2:
@@ -45,24 +47,27 @@ public class Main {
                     minhaPilha.pop();
                     System.out.println("Elemento Removido com sucesso!!");
                     Object topo = minhaPilha.top();
-                    System.out.println("\n--->Seu elemento do topo agora é "+topo+"!<---");
+                    System.out.println("\n--->Seu elemento do topo agora ï¿½ "+topo+"!<---");
+                    minhaPilha.mostrarPilha();
                 	}catch(PilhaVazia e1){
-                		System.out.println("Sua pilha está vazia, não tem o que remover");
+                		System.out.println("Sua pilha estï¿½ vazia, nï¿½o tem o que remover");
                 	}
                     break;
                 
                 case 3:
                 	try {
                     Object topo2 = minhaPilha.top();
-                    System.out.println("\n--->Seu elemento do topo é "+topo2+"!<---");
+                    System.out.println("\n--->Seu elemento do topo ï¿½ "+topo2+"!<---");
+                    minhaPilha.mostrarPilha();
                 	}catch(PilhaVazia e1){
-                		System.out.println("Sua pilha está vazia, não tem o que ver no topo dela");
+                		System.out.println("Sua pilha estï¿½ vazia, nï¿½o tem o que ver no topo dela");
                 	}
                     break;
                 
                 case 4:
                     int qtdElementos = minhaPilha.size();
-                    System.out.println("Você tem "+qtdElementos+" na pilha!");
+                    System.out.println("Vocï¿½ tem "+qtdElementos+" na pilha!");
+                    minhaPilha.mostrarPilha();
                     break;
                 
                 case 5:
@@ -71,15 +76,18 @@ public class Main {
                     if (situacao==true){
                         System.out.println("Sim! Pilha Vazia!");
                     }else{
-                        System.out.println("Não! a pilha não está vazia. Contém "+ qtd +" elementos!");
+                        System.out.println("Nï¿½o! a pilha nï¿½o estï¿½ vazia. Contï¿½m "+ qtd +" elementos!");
+                        minhaPilha.mostrarPilha();
                     }
                     break;
-                
+                case 6:
+                    minhaPilha.mostrarPilha();
+                    break;
                 case 0:
                     System.out.println("FIM DA PILHA\n=======================================");
                     break;
                 default:
-                    System.out.println("Escolha uma opção válida!");
+                    System.out.println("Escolha uma opï¿½ï¿½o vï¿½lida!");
             }
             
         }
